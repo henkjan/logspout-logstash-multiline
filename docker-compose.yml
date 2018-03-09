@@ -1,0 +1,9 @@
+version: '2'
+services:
+  logspout:
+     build: .
+     restart: always
+     volumes:
+       - /var/run/docker.sock:/var/run/docker.sock
+     environment:
+       - ROUTE_URIS=multiline+logstash+tcp://logstash.localhost:5001
